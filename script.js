@@ -29,7 +29,7 @@ document.getElementById('prisonForm').addEventListener('submit', async (e) => {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': 'api_key = sk-SR2CgXUJnJ5hp8uApZFUzI9bPeeQSMFgfoPzmmJsRqWyAvXVI07mpXb7WB70' // Замените на ваш ключ
+            'Authorization': 'sk-SR2CgXUJnJ5hp8uApZFUzI9bPeeQSMFgfoPzmmJsRqWyAvXVI07mpXb7WB70' // Замените на ваш ключ
         },
         body: JSON.stringify({ prompt, response_format: 'json' })
     });
