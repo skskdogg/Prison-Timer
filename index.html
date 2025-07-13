@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prison Timer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Prison Timer</h1>
+        <p>Рассчитай свой срок</p>
+        
+        <form id="prisonForm">
+            <label>Дата взятия под стражу (дд.мм.гггг):</label>
+            <input type="text" name="custodyStart" placeholder="01.01.2020">
+
+            <label>Дата вступления приговора в силу (дд.мм.гггг):</label>
+            <input type="text" name="sentenceFinal" required placeholder="01.01.2021">
+
+            <label>Срок (годы):</label>
+            <input type="number" name="years" min="0" required>
+            <label>Срок (месяцы):</label>
+            <input type="number" name="months" min="0" max="11" required>
+
+            <label>Статья УК РФ:</label>
+            <select name="article" required>
+                <option value="105">105 - Убийство</option>
+                <option value="228.1">228.1 - Наркотики</option>
+                <option value="131">131 - Изнасилование</option>
+                <!-- Добавить остальные статьи -->
+            </select>
+
+            <label>Часть статьи:</label>
+            <input type="text" name="part" required>
+
+            <label>Режим:</label>
+            <select name="regime" required>
+                <option value="strict">Строгий</option>
+                <option value="general">Общий</option>
+                <option value="settlement">Колония-поселение</option>
+            </select>
+
+            <div id="measures">
+                <h3>Меры пресечения</h3>
+                <div class="measure">
+                    <select name="measureType[]">
+                        <option value="sizo">СИЗО</option>
+                        <option value="houseArrest">Домашний арест</option>
+                        <option value="bail">Подписка о невыезде</option>
+                    </select>
+                    <input type="text" name="measureStart[]" placeholder="дд.мм.гггг">
+                    <input type="text" name="measureEnd[]" placeholder="дд.мм.гггг">
+                </div>
+                <button type="button" id="addMeasure">Добавить меру</button>
+            </div>
+
+            <button type="submit">Рассчитать</button>
+        </form>
+
+        <div id="results" style="display: none;">
+            <h2>Результаты</h2>
+            <p><strong>Дата освобождения:</strong> <span id="releaseDate"></span></p>
+            <p><strong>Осталось:</strong> <span id="timeLeft"></span></p>
+            <div id="milestones"></div>
+            <p><a href="#" id="shareLink">Поделиться ссылкой</a></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

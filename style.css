@@ -1,0 +1,73 @@
+body {
+    background: url('https://via.placeholder.com/1500x1500?text=Paper+Texture') repeat;
+    background-color: #333;
+    color: #ccc;
+    font-family: 'Courier New', monospace;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+h1, h2, h3 {
+    color: #d87a3b;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input, select {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    background: #555;
+    color: #ccc;
+    border: 1px solid #777;
+}
+
+button {
+    background: #d87a3b;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #b3632f;
+}
+
+.measure {
+    border: 1px solid #777;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.progress-bar {
+    width: 100%;
+    background: #555;
+    height: 20px;
+    margin: 5px 0;
+}
+
+.progress {
+    height: 100%;
+    background: #d87a3b;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+    input, select, button {
+        font-size: 14px;
+    }
+}
